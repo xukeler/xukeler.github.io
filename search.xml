@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[js的深入浅出]]></title>
-    <url>%2Fxukeler.github.io%2F2019%2F03%2F17%2Fjs%E7%9A%84%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[js隐式转换]]></title>
+    <url>%2Fxukeler.github.io%2F2019%2F03%2F17%2Fjs%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[js属于弱类型语言，在编程的过程中存在隐式类型装换。 1. 对象和Boolean对象和布尔值进行比较时，对象先转换为字符串，然后再转换为数字，布尔值直接转换为数字 1[] == true; //false []转换为字符串'',然后转换为数字0,true转换为数字1，所以为false 2.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 1[1,2,3] == '1,2,3' // true [1,2,3]转化为'1,2,3'，然后和'1,2,3'， 所以结果为true; 3.对象和数字对象和数字进行比较时，对象先转换为字符串，然后转换为数字，再和数字进行比较 1[1] == 1; // true `对象先转换为字符串再转换为数字，二者再比较 [1] =&gt; '1' =&gt; 1 所以结果为true 4. 字符串和数字字符串和数字进行比较时，字符串转换成数字，二者再比较 1'1' == 1 // true 5. 字符串和Boolean字符串和布尔值进行比较时，二者全部转换成数值再比较 12 6.Boolean和数字布尔值和数字进行比较时，布尔转换为数字，二者比较 1true == 1 // true 7.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 12]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[es5数组常用方法]]></title>
+    <url>%2Fxukeler.github.io%2F2019%2F03%2F17%2Fes5%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[es5浏览器兼容： Opera 11+ Firefox 3.6+ Safari 5+ Chrome 8+ Internet Explorer 9+ 1. forEachforEach是Array新方法中最基本的一个，就是遍历，循环。如下： 123456789//之前var arr=[1,2,3,4,5];for(var i=0;i&lt;arr.length;i++)&#123; console.log(i)//1 2 3 4 5&#125;//forEacharr.forEach(function(value,index,array)&#123; console.log(value)//1 2 3 4 5&#125;) 2. map调用数组的每个元素传递给指定的函数，并返回一个包含返回值的新数组；传递给map()的函数有返回值，map()返回新数组，不会修改调用的数组； 12345var arr=[1,2,3,4,5];var arr2=arr.map(function(x)&#123; return x*x&#125;)//arr2=[1, 4, 9, 16, 25] 3. filter返回数组的一个子集，回调函数用于逻辑判断是否返回，返回true则把当前元素加入到返回数组中，false则不加； 1234567var arr=[1,2,3,4,5];var arr2=arr.filter(function(x)&#123; if(x&gt;3)&#123; return true; &#125;&#125;)//arr2=[4, 5] 4. everyevery是“所有”函数的每个回调函数都返回true的时候才会返回true，当遇到false的时候终止执行，返回false； 12345var arr=[1,2,3,4,5];var flag=arr.every(function(x)&#123; return x&gt;3&#125;)//false 5. somesome函数是“存在”有一个回调函数返回true的时候终止执行并返回true，否则返回false； 12345var arr=[1,2,3,4,5];var flag=arr.some(function(x)&#123; return x&gt;3&#125;)//true]]></content>
   </entry>
 </search>
