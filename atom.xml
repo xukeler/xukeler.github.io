@@ -6,7 +6,7 @@
   <link href="/xukeler.github.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-17T12:58:52.325Z</updated>
+  <updated>2019-03-20T03:04:43.694Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue创建组件的三种方法</title>
+    <link href="http://yoursite.com/2019/03/20/Vue%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/03/20/Vue创建组件的三种方法/</id>
+    <published>2019-03-20T03:01:52.000Z</published>
+    <updated>2019-03-20T03:04:43.694Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Vue中有多种创建组件的方式"><a href="#Vue中有多种创建组件的方式" class="headerlink" title="Vue中有多种创建组件的方式"></a>Vue中有多种创建组件的方式</h3><ul><li>第一种使用Vue.extend创建全局的Vue模板。然后使用Vue.component绑定模板。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;com1&gt;&lt;/com1&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script&gt;</span></span><br><span class="line"><span class="regexp">       var com=Vue.extend(&#123;</span></span><br><span class="line"><span class="regexp">           template:`</span></span><br><span class="line"><span class="regexp">               &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                   &lt;h1&gt;今天的天气很好&lt;/</span>h1&gt;</span><br><span class="line">               &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">           `</span></span><br><span class="line"><span class="regexp">       &#125;)</span></span><br><span class="line"><span class="regexp">       Vue.component("com1",com)</span></span><br><span class="line"><span class="regexp">      var app=new Vue(&#123;</span></span><br><span class="line"><span class="regexp">          el:"#app",</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">   &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure><ul><li>第二种，将Vue.extend写在Vue.component里面。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;com1&gt;&lt;/com1&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script&gt;</span></span><br><span class="line"><span class="regexp">       Vue.component("com1",Vue.extend(&#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/或者  Vue.component("com1",&#123;</span></span><br><span class="line"><span class="regexp">           template:`</span></span><br><span class="line"><span class="regexp">               &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                   &lt;h1&gt;今天的天气很好&lt;/</span>h1&gt;</span><br><span class="line">               &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">           `</span></span><br><span class="line"><span class="regexp">       &#125;))</span></span><br><span class="line"><span class="regexp">      var app=new Vue(&#123;</span></span><br><span class="line"><span class="regexp">          el:"#app",</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">   &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure><ul><li>第三种直接在html中写template模板标签，绑定Vue.component的id，通过组名名标签引用。好处是语法高亮，且有提示。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;com1&gt;&lt;/com1&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;template id="com"&gt;</span></span><br><span class="line"><span class="regexp">       &lt;div&gt;</span></span><br><span class="line"><span class="regexp">           &lt;h1&gt;你还好吗&lt;/</span>h1&gt;</span><br><span class="line">       &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;/</span>template&gt;</span><br><span class="line">   &lt;script&gt;</span><br><span class="line">       Vue.component(<span class="string">"com1"</span>,&#123;</span><br><span class="line">           template:<span class="string">`#com`</span></span><br><span class="line">       &#125;)</span><br><span class="line">      <span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">          el:<span class="string">"#app"</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure><blockquote><p>注意模板template要有唯一的顶层元素</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Vue中有多种创建组件的方式&quot;&gt;&lt;a href=&quot;#Vue中有多种创建组件的方式&quot; class=&quot;headerlink&quot; title=&quot;Vue中有多种创建组件的方式&quot;&gt;&lt;/a&gt;Vue中有多种创建组件的方式&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;第一种使用Vue.extend创
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>js隐式转换</title>

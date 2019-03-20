@@ -265,6 +265,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/03/20/Vue创建组件的三种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Chang Jing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/xukeler.github.io/images/header.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xukeler">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/xukeler.github.io/2019/03/20/Vue创建组件的三种方法/" itemprop="url">Vue创建组件的三种方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T11:04:43+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Vue中有多种创建组件的方式"><a href="#Vue中有多种创建组件的方式" class="headerlink" title="Vue中有多种创建组件的方式"></a>Vue中有多种创建组件的方式</h3><ul>
+<li>第一种使用Vue.extend创建全局的Vue模板。然后使用Vue.component绑定模板。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;com1&gt;&lt;/com1&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script&gt;</span></span><br><span class="line"><span class="regexp">       var com=Vue.extend(&#123;</span></span><br><span class="line"><span class="regexp">           template:`</span></span><br><span class="line"><span class="regexp">               &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                   &lt;h1&gt;今天的天气很好&lt;/</span>h1&gt;</span><br><span class="line">               &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">           `</span></span><br><span class="line"><span class="regexp">       &#125;)</span></span><br><span class="line"><span class="regexp">       Vue.component("com1",com)</span></span><br><span class="line"><span class="regexp">      var app=new Vue(&#123;</span></span><br><span class="line"><span class="regexp">          el:"#app",</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">   &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二种，将Vue.extend写在Vue.component里面。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;com1&gt;&lt;/com1&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script&gt;</span></span><br><span class="line"><span class="regexp">       Vue.component("com1",Vue.extend(&#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/或者  Vue.component("com1",&#123;</span></span><br><span class="line"><span class="regexp">           template:`</span></span><br><span class="line"><span class="regexp">               &lt;div&gt;</span></span><br><span class="line"><span class="regexp">                   &lt;h1&gt;今天的天气很好&lt;/</span>h1&gt;</span><br><span class="line">               &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">           `</span></span><br><span class="line"><span class="regexp">       &#125;))</span></span><br><span class="line"><span class="regexp">      var app=new Vue(&#123;</span></span><br><span class="line"><span class="regexp">          el:"#app",</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">   &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三种直接在html中写template模板标签，绑定Vue.component的id，通过组名名标签引用。好处是语法高亮，且有提示。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;com1&gt;&lt;/com1&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;template id="com"&gt;</span></span><br><span class="line"><span class="regexp">       &lt;div&gt;</span></span><br><span class="line"><span class="regexp">           &lt;h1&gt;你还好吗&lt;/</span>h1&gt;</span><br><span class="line">       &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;/</span>template&gt;</span><br><span class="line">   &lt;script&gt;</span><br><span class="line">       Vue.component(<span class="string">"com1"</span>,&#123;</span><br><span class="line">           template:<span class="string">`#com`</span></span><br><span class="line">       &#125;)</span><br><span class="line">      <span class="keyword">var</span> app=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">          el:<span class="string">"#app"</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意模板template要有唯一的顶层元素</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/03/17/js隐式转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -570,7 +704,7 @@
               
                 <a href="/xukeler.github.io/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

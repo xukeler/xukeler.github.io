@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue创建组件的三种方法]]></title>
+    <url>%2Fxukeler.github.io%2F2019%2F03%2F20%2FVue%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Vue中有多种创建组件的方式 第一种使用Vue.extend创建全局的Vue模板。然后使用Vue.component绑定模板。 12345678910111213141516&lt;div id="app"&gt; &lt;com1&gt;&lt;/com1&gt; &lt;/div&gt; &lt;script&gt; var com=Vue.extend(&#123; template:` &lt;div&gt; &lt;h1&gt;今天的天气很好&lt;/h1&gt; &lt;/div&gt; ` &#125;) Vue.component("com1",com) var app=new Vue(&#123; el:"#app", &#125;) &lt;/script&gt; 第二种，将Vue.extend写在Vue.component里面。 12345678910111213141516&lt;div id="app"&gt; &lt;com1&gt;&lt;/com1&gt; &lt;/div&gt; &lt;script&gt; Vue.component("com1",Vue.extend(&#123; //或者 Vue.component("com1",&#123; template:` &lt;div&gt; &lt;h1&gt;今天的天气很好&lt;/h1&gt; &lt;/div&gt; ` &#125;)) var app=new Vue(&#123; el:"#app", &#125;) &lt;/script&gt; 第三种直接在html中写template模板标签，绑定Vue.component的id，通过组名名标签引用。好处是语法高亮，且有提示。 12345678910111213141516&lt;div id="app"&gt; &lt;com1&gt;&lt;/com1&gt; &lt;/div&gt; &lt;template id="com"&gt; &lt;div&gt; &lt;h1&gt;你还好吗&lt;/h1&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; Vue.component("com1",&#123; template:`#com` &#125;) var app=new Vue(&#123; el:"#app", &#125;) &lt;/script&gt; 注意模板template要有唯一的顶层元素]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[js隐式转换]]></title>
     <url>%2Fxukeler.github.io%2F2019%2F03%2F17%2Fjs%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%2F</url>
     <content type="text"><![CDATA[js属于弱类型语言，在编程的过程中存在隐式类型装换。 1. 对象和Boolean对象和布尔值进行比较时，对象先转换为字符串，然后再转换为数字，布尔值直接转换为数字 1[] == true; //false []转换为字符串'',然后转换为数字0,true转换为数字1，所以为false 2.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 1[1,2,3] == '1,2,3' // true [1,2,3]转化为'1,2,3'，然后和'1,2,3'， 所以结果为true; 3.对象和数字对象和数字进行比较时，对象先转换为字符串，然后转换为数字，再和数字进行比较 1[1] == 1; // true `对象先转换为字符串再转换为数字，二者再比较 [1] =&gt; '1' =&gt; 1 所以结果为true 4. 字符串和数字字符串和数字进行比较时，字符串转换成数字，二者再比较 1'1' == 1 // true 5. 字符串和Boolean字符串和布尔值进行比较时，二者全部转换成数值再比较 12 6.Boolean和数字布尔值和数字进行比较时，布尔转换为数字，二者比较 1true == 1 // true 7.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 12]]></content>
