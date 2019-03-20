@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[let&const&var的区别]]></title>
+    <url>%2Fxukeler.github.io%2F2019%2F03%2F20%2Flet-const-var%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[对var来说 js中只有全局作用域和局部作用域,let和const存在块级作用域,不存在变量提升刚. ES6新增let变量声明命令，用法类似于var但是只在let命令所在的代码块有效，存在块级作用域 ES6新增const声明命令，const声明一个只读的常量，一旦声明，常量的值就不能改变。一旦声明就必须赋值，否则会报错。 1234567891011121314151617&lt;script&gt; //对var来说 js中只有全局作用域和局部作用域 // 局部作用域只在函数内部存在 // es6新增块级作用域 // 例 var sum=0; for(var i=0;i&lt;6;i++)&#123; sum+=i &#125; console.log(i) //得到的结果是6 for(let j=0;j&lt;6;j++)&#123; sum+=j; &#125; console.log(j) //得到的是undefined let在代码块里面声明的变量只能在块级作用域访问到 //声明一个常量 const PI=3.14; &lt;/script&gt;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue动态组件]]></title>
+    <url>%2Fxukeler.github.io%2F2019%2F03%2F20%2FVue%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Vue提供了 component 标签,来展示对应名称的组件 component 是一个占位符, :is 属性,可以用来指定要展示的组件的名称 通过标签的is属性实现组件的切换。 1234567891011121314151617181920212223&lt;div id="app"&gt; &lt;a href="" @click.prevent="res='com1'"&gt;登陆&lt;/a&gt; &lt;a href="" @click.prevent="res='com2'"&gt;注册&lt;/a&gt; &lt;component :is="res"&gt;&lt;/component&gt; &lt;/div&gt; &lt;script&gt; Vue.component("com2",&#123; template:` &lt;div&gt; &lt;h1&gt;登陆&lt;/h1&gt; &lt;/div&gt;` &#125;) Vue.component("com1",&#123; template:`&lt;div&gt; &lt;h1&gt;注册&lt;/h1&gt; &lt;/div&gt;` &#125;) var app=new Vue(&#123; el:"#app", data:&#123; res:"com1" &#125; &#125;) &lt;/script&gt;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Vue创建组件的三种方法]]></title>
     <url>%2Fxukeler.github.io%2F2019%2F03%2F20%2FVue%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[Vue中有多种创建组件的方式 第一种使用Vue.extend创建全局的Vue模板。然后使用Vue.component绑定模板。 12345678910111213141516&lt;div id="app"&gt; &lt;com1&gt;&lt;/com1&gt; &lt;/div&gt; &lt;script&gt; var com=Vue.extend(&#123; template:` &lt;div&gt; &lt;h1&gt;今天的天气很好&lt;/h1&gt; &lt;/div&gt; ` &#125;) Vue.component("com1",com) var app=new Vue(&#123; el:"#app", &#125;) &lt;/script&gt; 第二种，将Vue.extend写在Vue.component里面。 12345678910111213141516&lt;div id="app"&gt; &lt;com1&gt;&lt;/com1&gt; &lt;/div&gt; &lt;script&gt; Vue.component("com1",Vue.extend(&#123; //或者 Vue.component("com1",&#123; template:` &lt;div&gt; &lt;h1&gt;今天的天气很好&lt;/h1&gt; &lt;/div&gt; ` &#125;)) var app=new Vue(&#123; el:"#app", &#125;) &lt;/script&gt; 第三种直接在html中写template模板标签，绑定Vue.component的id，通过组名名标签引用。好处是语法高亮，且有提示。 12345678910111213141516&lt;div id="app"&gt; &lt;com1&gt;&lt;/com1&gt; &lt;/div&gt; &lt;template id="com"&gt; &lt;div&gt; &lt;h1&gt;你还好吗&lt;/h1&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; Vue.component("com1",&#123; template:`#com` &#125;) var app=new Vue(&#123; el:"#app", &#125;) &lt;/script&gt; 注意模板template要有唯一的顶层元素]]></content>

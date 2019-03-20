@@ -265,6 +265,255 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/03/20/let-const-var的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Chang Jing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/xukeler.github.io/images/header.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xukeler">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/xukeler.github.io/2019/03/20/let-const-var的区别/" itemprop="url">let&const&var的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T11:14:16+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>对<code>var</code>来说 js中只有<strong>全局作用域和局部作用域</strong>,<code>let</code>和<code>const</code>存在块级作用域,不存在变量提升刚.</li>
+<li><strong>ES6新增</strong><code>let</code>变量声明命令，用法类似于<code>var</code>但是只在<code>let</code>命令所在的代码块有效，<strong>存在块级作用域</strong></li>
+<li><strong>ES6新增</strong><code>const</code>声明命令，<code>const</code>声明一个只读的常量，一旦声明，常量的值就不能改变。一旦声明就必须赋值，否则会报错。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">       <span class="comment">//对var来说 js中只有全局作用域和局部作用域</span></span><br><span class="line">       <span class="comment">// 局部作用域只在函数内部存在</span></span><br><span class="line">       <span class="comment">// es6新增块级作用域</span></span><br><span class="line">       <span class="comment">// 例</span></span><br><span class="line">       <span class="keyword">var</span> sum=<span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;i++)&#123;</span><br><span class="line">           sum+=i</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">console</span>.log(i) <span class="comment">//得到的结果是6</span></span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;<span class="number">6</span>;j++)&#123;</span><br><span class="line">           sum+=j;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="built_in">console</span>.log(j) <span class="comment">//得到的是undefined  let在代码块里面声明的变量只能在块级作用域访问到</span></span><br><span class="line">       <span class="comment">//声明一个常量</span></span><br><span class="line">       <span class="keyword">const</span> PI=<span class="number">3.14</span>;</span><br><span class="line">   &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/03/20/Vue动态组件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Chang Jing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/xukeler.github.io/images/header.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xukeler">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/xukeler.github.io/2019/03/20/Vue动态组件/" itemprop="url">Vue动态组件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-20T11:15:28+08:00">
+                2019-03-20
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Vue提供了-component-标签-来展示对应名称的组件"><a href="#Vue提供了-component-标签-来展示对应名称的组件" class="headerlink" title="Vue提供了 component 标签,来展示对应名称的组件"></a>Vue提供了 component 标签,来展示对应名称的组件</h3><ul>
+<li>component 是一个占位符, :is 属性,可以用来指定要展示的组件的名称</li>
+<li>通过<component>标签的is属性实现组件的切换。</component></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">       &lt;a href=<span class="string">""</span> @click.prevent=<span class="string">"res='com1'"</span>&gt;登陆&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">       &lt;a href="" @click.prevent="res='com2'"&gt;注册&lt;/</span>a&gt;</span><br><span class="line">       &lt;component :is=<span class="string">"res"</span>&gt;&lt;/component&gt;</span><br><span class="line">   &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">   &lt;script&gt;</span></span><br><span class="line"><span class="regexp">       Vue.component("com2",&#123;</span></span><br><span class="line"><span class="regexp">           template:` &lt;div&gt;</span></span><br><span class="line"><span class="regexp">               &lt;h1&gt;登陆&lt;/</span>h1&gt;</span><br><span class="line">           &lt;<span class="regexp">/div&gt;`</span></span><br><span class="line"><span class="regexp">       &#125;)</span></span><br><span class="line"><span class="regexp">       Vue.component("com1",&#123;</span></span><br><span class="line"><span class="regexp">           template:`&lt;div&gt;</span></span><br><span class="line"><span class="regexp">               &lt;h1&gt;注册&lt;/</span>h1&gt;</span><br><span class="line">           &lt;<span class="regexp">/div&gt;`</span></span><br><span class="line"><span class="regexp">       &#125;)</span></span><br><span class="line"><span class="regexp">       var app=new Vue(&#123;</span></span><br><span class="line"><span class="regexp">           el:"#app",</span></span><br><span class="line"><span class="regexp">           data:&#123;</span></span><br><span class="line"><span class="regexp">               res:"com1"</span></span><br><span class="line"><span class="regexp">           &#125;</span></span><br><span class="line"><span class="regexp">       &#125;)</span></span><br><span class="line"><span class="regexp">   &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/03/20/Vue创建组件的三种方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -704,7 +953,7 @@
               
                 <a href="/xukeler.github.io/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
