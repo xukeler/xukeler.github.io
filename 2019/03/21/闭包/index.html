@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="前端Web开发学习记录">
+<meta name="description" content="闭包：从字面意思来理解就是封闭和包裹，换句话说，就是在函数内部定义的变量，在函数的外部无法访问到，因此就说函数构成了一个闭包。说白了闭包是作用域的应用。  闭包的作用域链包含着它自己的作用域，以及包含它的函数的作用域和全局作用域。 创建闭包最常见方式，就是在一个函数内部创建另一个函数。下面例子中的 closure 就是一个闭包：  12345678function func()&amp;#123;  va">
 <meta name="keywords" content="web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/闭包/index.html">
 <meta property="og:site_name" content="xukeler">
-<meta property="og:description" content="前端Web开发学习记录">
+<meta property="og:description" content="闭包：从字面意思来理解就是封闭和包裹，换句话说，就是在函数内部定义的变量，在函数的外部无法访问到，因此就说函数构成了一个闭包。说白了闭包是作用域的应用。  闭包的作用域链包含着它自己的作用域，以及包含它的函数的作用域和全局作用域。 创建闭包最常见方式，就是在一个函数内部创建另一个函数。下面例子中的 closure 就是一个闭包：  12345678function func()&amp;#123;  va">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T09:53:39.140Z">
+<meta property="og:updated_time" content="2019-03-21T13:37:48.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="前端Web开发学习记录">
+<meta name="twitter:title" content="闭包">
+<meta name="twitter:description" content="闭包：从字面意思来理解就是封闭和包裹，换句话说，就是在函数内部定义的变量，在函数的外部无法访问到，因此就说函数构成了一个闭包。说白了闭包是作用域的应用。  闭包的作用域链包含着它自己的作用域，以及包含它的函数的作用域和全局作用域。 创建闭包最常见方式，就是在一个函数内部创建另一个函数。下面例子中的 closure 就是一个闭包：  12345678function func()&amp;#123;  va">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/21/闭包/">
 
 
 
 
 
-  <title>标签 | xukeler</title>
+  <title>闭包 | xukeler</title>
   
 
 
@@ -253,33 +253,147 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/03/21/闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Chang Jing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/xukeler.github.io/images/header.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xukeler">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">闭包</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-21T21:37:48+08:00">
+                2019-03-21
+              </time>
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>闭包：从字面意思来理解就是封闭和包裹，换句话说，就是在函数内部定义的变量，在函数的外部无法访问到，因此就说函数构成了一个闭包。说白了闭包是作用域的应用。</p>
+<ul>
+<li>闭包的作用域链包含着它自己的作用域，以及包含它的函数的作用域和全局作用域。</li>
+<li>创建闭包最常见方式，就是在一个函数内部创建另一个函数。下面例子中的 closure 就是一个闭包：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>,b = <span class="number">2</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">closure</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> closure;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/xukeler.github.io/2019/03/20/let-const-var的区别/" rel="next" title="let&const&var的区别">
+                <i class="fa fa-chevron-left"></i> let&const&var的区别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/xukeler.github.io/2019/03/21/js面向对象编程/" rel="prev" title="js面向对象编程">
+                js面向对象编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
