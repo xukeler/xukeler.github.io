@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[js面向对象编程]]></title>
     <url>%2Fxukeler.github.io%2F2019%2F03%2F21%2Fjs%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Function 是JS自带的函数对象。 最简单的封装 12 构造函数模式：所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。 123456789101112131415function Cat(name,color)&#123; this.name=name; this.color=color; this.eat=function()&#123; alert(this.name+"吃老鼠") &#125;&#125;var cat=new Cat("大貓","red");cat.eat();//每一個實例對象都有一個constructor屬性指向它的構造函數console.log(cat.constructor); 原型对象模式，构造函数的原型对象的this指向构造函数，new生成的实例对象只包含原型对象上的方法。 1234567891011121314151617function Cat(name,color)&#123; this.name=name; this.color=color; &#125;Cat.prototype.eat=function()&#123; alert(this.name+"要吃老鼠");&#125;var cat1=new Cat("大貓","red");var cat2=new Cat("二貓","purple");// console.log(cat1.eat==cat2.eat)cat2.eat();]]></content>
+    <content type="text"><![CDATA[JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Function 是JS自带的函数对象。 最简单的封装 1234567var Cat = &#123; name : '', color : '' &#125; 构造函数模式：所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。 123456789101112131415function Cat(name,color)&#123; this.name=name; this.color=color; this.eat=function()&#123; alert(this.name+"吃老鼠") &#125;&#125;var cat=new Cat("大貓","red");cat.eat();//每一個實例對象都有一個constructor屬性指向它的構造函數console.log(cat.constructor); 原型对象模式，构造函数的原型对象的this指向构造函数，new生成的实例对象只包含原型对象上的方法。 1234567891011121314151617function Cat(name,color)&#123; this.name=name; this.color=color; &#125;Cat.prototype.eat=function()&#123; alert(this.name+"要吃老鼠");&#125;var cat1=new Cat("大貓","red");var cat2=new Cat("二貓","purple");// console.log(cat1.eat==cat2.eat)cat2.eat();]]></content>
   </entry>
   <entry>
     <title><![CDATA[闭包]]></title>
@@ -28,7 +28,7 @@
   <entry>
     <title><![CDATA[js隐式转换]]></title>
     <url>%2Fxukeler.github.io%2F2019%2F03%2F17%2Fjs%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%2F</url>
-    <content type="text"><![CDATA[js属于弱类型语言，在编程的过程中存在隐式类型装换。 1. 对象和Boolean对象和布尔值进行比较时，对象先转换为字符串，然后再转换为数字，布尔值直接转换为数字 1[] == true; //false []转换为字符串'',然后转换为数字0,true转换为数字1，所以为false 2.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 1[1,2,3] == '1,2,3' // true [1,2,3]转化为'1,2,3'，然后和'1,2,3'， 所以结果为true; 3.对象和数字对象和数字进行比较时，对象先转换为字符串，然后转换为数字，再和数字进行比较 1[1] == 1; // true `对象先转换为字符串再转换为数字，二者再比较 [1] =&gt; '1' =&gt; 1 所以结果为true 4. 字符串和数字字符串和数字进行比较时，字符串转换成数字，二者再比较 1'1' == 1 // true 5. 字符串和Boolean字符串和布尔值进行比较时，二者全部转换成数值再比较 12 6.Boolean和数字布尔值和数字进行比较时，布尔转换为数字，二者比较 1true == 1 // true 7.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 12]]></content>
+    <content type="text"><![CDATA[js属于弱类型语言，在编程的过程中存在隐式类型装换。 1. 对象和Boolean对象和布尔值进行比较时，对象先转换为字符串，然后再转换为数字，布尔值直接转换为数字 1[] == true; //false []转换为字符串'',然后转换为数字0,true转换为数字1，所以为false 2.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 1[1,2,3] == '1,2,3' // true [1,2,3]转化为'1,2,3'，然后和'1,2,3'， 所以结果为true; 3.对象和数字对象和数字进行比较时，对象先转换为字符串，然后转换为数字，再和数字进行比较 1[1] == 1; // true `对象先转换为字符串再转换为数字，二者再比较 [1] =&gt; '1' =&gt; 1 所以结果为true 4. 字符串和数字字符串和数字进行比较时，字符串转换成数字，二者再比较 1'1' == 1 // true 5. 字符串和Boolean字符串和布尔值进行比较时，二者全部转换成数值再比较 1'1' == true; // true 6.Boolean和数字布尔值和数字进行比较时，布尔转换为数字，二者比较 1true == 1 // true 7.对象和字符串对象和字符串进行比较时，对象转换为字符串，然后两者进行比较 1[1,2,3] == '1,2,3' // true [1,2,3]转化为'1,2,3'，然后和'1,2,3'， 所以结果为true;]]></content>
   </entry>
   <entry>
     <title><![CDATA[es5数组常用方法]]></title>
