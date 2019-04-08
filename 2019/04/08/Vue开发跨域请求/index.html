@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="前端Web开发学习记录">
+<meta name="description" content="在Vue-cli搭建的项目结构中的 config/index.js 配置文件中配置代理服务器。 123456789101112131415161718dev: &amp;#123;    env: require(&apos;./dev.env&apos;),    port: 8080,    autoOpenBrowser: true,    assetsSubDirectory: &apos;static&apos;,    assets">
 <meta name="keywords" content="web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue开发跨域请求">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/Vue开发跨域请求/index.html">
 <meta property="og:site_name" content="xukeler">
-<meta property="og:description" content="前端Web开发学习记录">
+<meta property="og:description" content="在Vue-cli搭建的项目结构中的 config/index.js 配置文件中配置代理服务器。 123456789101112131415161718dev: &amp;#123;    env: require(&apos;./dev.env&apos;),    port: 8080,    autoOpenBrowser: true,    assetsSubDirectory: &apos;static&apos;,    assets">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T09:54:20.364Z">
+<meta property="og:updated_time" content="2019-04-08T05:44:30.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="前端Web开发学习记录">
+<meta name="twitter:title" content="Vue开发跨域请求">
+<meta name="twitter:description" content="在Vue-cli搭建的项目结构中的 config/index.js 配置文件中配置代理服务器。 123456789101112131415161718dev: &amp;#123;    env: require(&apos;./dev.env&apos;),    port: 8080,    autoOpenBrowser: true,    assetsSubDirectory: &apos;static&apos;,    assets">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/08/Vue开发跨域请求/">
 
 
 
 
 
-  <title>关于 | xukeler</title>
+  <title>Vue开发跨域请求 | xukeler</title>
   
 
 
@@ -253,33 +253,140 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/xukeler.github.io/2019/04/08/Vue开发跨域请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xu Chang Jing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/xukeler.github.io/images/header.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xukeler">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">Vue开发跨域请求</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-08T13:44:30+08:00">
+                2019-04-08
+              </time>
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>在Vue-cli搭建的项目结构中的 config/index.js 配置文件中配置代理服务器。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">dev: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./dev.env'</span>),</span><br><span class="line">    port: <span class="number">8080</span>,</span><br><span class="line">    autoOpenBrowser: <span class="literal">true</span>,</span><br><span class="line">    assetsSubDirectory: <span class="string">'static'</span>,</span><br><span class="line">    assetsPublicPath: <span class="string">'/'</span>,</span><br><span class="line">    <span class="comment">//proxyTable: &#123;&#125;,</span></span><br><span class="line">    proxyTable:&#123;</span><br><span class="line">        <span class="string">'/apis'</span>: &#123;</span><br><span class="line">            <span class="comment">// 测试环境</span></span><br><span class="line">            target: <span class="string">'http://api.veblen.com'</span>,  <span class="comment">// 接口域名</span></span><br><span class="line">            changeOrigin: <span class="literal">true</span>,  <span class="comment">//是否跨域</span></span><br><span class="line">            pathRewrite: &#123;</span><br><span class="line">                <span class="string">'^/apis'</span>: <span class="string">'apis'</span>   <span class="comment">//需要rewrite重写的,</span></span><br><span class="line">            &#125;              </span><br><span class="line">        &#125;,</span><br><span class="line">    cssSourceMap: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>请求路径就会被映射<a href="http://api.veblem.com/apis/getData" target="_blank" rel="noopener">http://api.veblem.com/apis/getData</a></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/xukeler.github.io/2019/03/21/js面向对象编程/" rel="next" title="js面向对象编程">
+                <i class="fa fa-chevron-left"></i> js面向对象编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 

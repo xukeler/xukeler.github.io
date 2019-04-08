@@ -6,7 +6,7 @@
   <link href="/xukeler.github.io/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-23T14:21:51.436Z</updated>
+  <updated>2019-04-08T05:44:30.310Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue开发跨域请求</title>
+    <link href="http://yoursite.com/2019/04/08/Vue%E5%BC%80%E5%8F%91%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82/"/>
+    <id>http://yoursite.com/2019/04/08/Vue开发跨域请求/</id>
+    <published>2019-04-08T05:42:15.000Z</published>
+    <updated>2019-04-08T05:44:30.310Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Vue-cli搭建的项目结构中的 config/index.js 配置文件中配置代理服务器。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">dev: &#123;</span><br><span class="line">    env: <span class="built_in">require</span>(<span class="string">'./dev.env'</span>),</span><br><span class="line">    port: <span class="number">8080</span>,</span><br><span class="line">    autoOpenBrowser: <span class="literal">true</span>,</span><br><span class="line">    assetsSubDirectory: <span class="string">'static'</span>,</span><br><span class="line">    assetsPublicPath: <span class="string">'/'</span>,</span><br><span class="line">    <span class="comment">//proxyTable: &#123;&#125;,</span></span><br><span class="line">    proxyTable:&#123;</span><br><span class="line">        <span class="string">'/apis'</span>: &#123;</span><br><span class="line">            <span class="comment">// 测试环境</span></span><br><span class="line">            target: <span class="string">'http://api.veblen.com'</span>,  <span class="comment">// 接口域名</span></span><br><span class="line">            changeOrigin: <span class="literal">true</span>,  <span class="comment">//是否跨域</span></span><br><span class="line">            pathRewrite: &#123;</span><br><span class="line">                <span class="string">'^/apis'</span>: <span class="string">'apis'</span>   <span class="comment">//需要rewrite重写的,</span></span><br><span class="line">            &#125;              </span><br><span class="line">        &#125;,</span><br><span class="line">    cssSourceMap: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>请求路径就会被映射<a href="http://api.veblem.com/apis/getData" target="_blank" rel="noopener">http://api.veblem.com/apis/getData</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在Vue-cli搭建的项目结构中的 config/index.js 配置文件中配置代理服务器。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>js面向对象编程</title>
